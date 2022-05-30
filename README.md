@@ -1,38 +1,54 @@
-How to initialize a project:
+# Nest.js-cli commands
 
--   nest new <name> [options]
+## How to initialize a project:
 
---dry-run -- without real changes
---skip-git -- without git repo
---skip-install -- without installing dependencies
---package-manger -- npm/yarn
---language -- TS/JS
+-   `nest new <name> [options]`
 
-How to create a component:
+`--dry-run` -- without real changes
 
--   nest generate <schematic> <name> [options]
--   nest g s <name> [options]
+`--skip-git` -- without git repo
 
---dry-run -- without real changes
---project -- choosing project for monorepo
---flat -- without creating nested directory
+`--skip-install` -- without installing dependencies
 
-How to build a project:
+`--package-manger` -- npm/yarn
 
--   nest build [options]
+`--language` -- TS/JS
 
---path -- path for tsconfig.json
---config -- path for nest-cli.json
---watch -- rebuild after any changes
---webpack -- use webpack
---webpackPath -- path for webpack
---tsc -- force ts compiler
+## How to create a component:
 
-How to launch a project:
+-   `nest generate <schematic> <name> [options]`
+-   `nest g s <name> [options]`
 
--   nest start [options]
+`--dry-run` -- without real changes
 
---preserveWatchOutput -- do not clear console after build
---watchAssets -- watch not only for ts assets
---debug -- debug mode (breakpoints, memory and process usage analysis)
---exec -- path for bin node file
+`--project` -- choosing project for monorepo
+
+`--flat` -- without creating nested directory
+
+## How to build a project:
+
+-   `nest build [options]`
+
+`--path` -- path for tsconfig.json
+
+`--config` -- path for nest-cli.json
+
+`--watch` -- rebuild after any changes
+
+`--webpack` -- use webpack
+
+`--webpackPath` -- path for webpack
+
+`--tsc` -- force ts compiler
+
+## How to launch a project:
+
+-   `nest start [options]`
+
+`--preserveWatchOutput` -- do not clear console after build
+
+`--watchAssets` -- watch not only for ts assets
+
+`--debug` -- debug mode (breakpoints, memory and process usage analysis)
+
+`--exec` -- path for bin node file
