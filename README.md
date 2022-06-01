@@ -14,6 +14,13 @@
 
 `--language` -- TS/JS
 
+## Useful commands:
+
+`nest g module <MODULE_NAME>` -- create a new module
+
+`nest g class <MODULE_name>/<MODEL_NAME>.model` -- create a new model
+
+
 ## How to create a component:
 
 -   `nest generate <schematic> <name> [options]`
