@@ -52,3 +52,7 @@
 `--debug` -- debug mode (breakpoints, memory and process usage analysis)
 
 `--exec` -- path for bin node file
+
+## TSConfig rules
+
+- "strict": true -- noImplicitAny and strictNullChecks
