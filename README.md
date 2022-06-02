@@ -20,6 +20,7 @@
 
 `nest g class <MODULE_name>/<MODEL_NAME>.model` -- create a new model
 
+`nest g controller <CONTROLLER_NAME>` -- create a controller
 
 ## How to create a component:
 
@@ -62,4 +63,4 @@
 
 ## TSConfig rules
 
-- "strict": true -- noImplicitAny and strictNullChecks
+-   "strict": true -- noImplicitAny and strictNullChecks
