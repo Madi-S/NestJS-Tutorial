@@ -1,5 +1,7 @@
 ## Installation
 
+before running anything run `mongod`
+
 ```bash
 $ npm install
 ```
