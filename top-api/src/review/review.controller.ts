@@ -18,7 +18,7 @@ export class ReviewController {
 
   @Post('create') // by default 201
   async create(@Body() dto: CreateReviewDto) {
-    this.reviewService.create(dto);
+    return this.reviewService.create(dto);
   }
 
   @Delete(':id') // by default 200
@@ -27,10 +27,11 @@ export class ReviewController {
     if (!deletedDoc) {
       throw new HttpException(REVIEW_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
+    return deletedDoc;
   }
 
   @Get('byPorduct/:productId')
-  async getByPorduct(@Param('productId') productId: string) {
+  async getByProduct(@Param('productId') productId: string) {
     return this.reviewService.findByProductId(productId);
   }
 }

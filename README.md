@@ -1,3 +1,13 @@
+# Theory
+
+## Types of testing:
+
+-   e2e (testing whole system via api or browser) using jest, mocha, chai | cypress, protractor, selenium; `npm run test:e2e`
+
+-   integration (testing integration between 2 components: external api, database via pipelines or mounting several instances of microservices) using jest, mocha, chai
+
+-   unit (testing isolated functions or classes using mock data) using jest, mocha, chai
+
 # Nest.js-cli commands
 
 ## How to initialize a project:
@@ -61,6 +71,6 @@
 
 `--exec` -- path for bin node file
 
-## TSConfig rules
+## TSConfig rules:
 
 -   "strict": true -- noImplicitAny and strictNullChecks
