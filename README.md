@@ -8,6 +8,12 @@
 
 -   unit (testing isolated functions or classes using mock data) using jest, mocha, chai
 
+## Debugging:
+
+- `clinic doctor --on-port 'autocannon localhost:$PORT/api/review/byProduct/123234234234234sdfsdf' -- node dist/main.js`
+
+- `autocannon http://localhost:3000/api/review/byProduct/123`
+
 # Nest.js-cli commands
 
 ## How to initialize a project:
