@@ -3,7 +3,6 @@ import { Injectable } from '@nestjs/common';
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { TopLevelCategory, TopPageModel } from './top-page.model';
 import { CreateTopPageDto } from './dto/create-top-page.dto';
-import { FindTopPageDto } from './dto/find-top-page.dto';
 
 @Injectable()
 export class TopPageService {
@@ -22,6 +21,12 @@ export class TopPageService {
 
   async findByAlias(alias: string) {
     return this.topPageModel.findOne({ alias }).exec();
+  }
+
+  async findByText(text: string) {
+    return this.topPageModel
+      .find({ $text: { $search: text, $caseSensitive: false } })
+      .exec();
   }
 
   async findByTopLevelCategory(firstCategory: TopLevelCategory) {

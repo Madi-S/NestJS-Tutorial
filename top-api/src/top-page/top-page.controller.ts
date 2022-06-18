@@ -50,13 +50,6 @@ export class TopPageController {
     return topPage;
   }
 
-  @UsePipes(new ValidationPipe())
-  @HttpCode(200)
-  @Post('find')
-  async find(@Body() dto: FindTopPageDto) {
-    return this.topPageService.findByTopLevelCategory(dto.firstCategory);
-  }
-
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async delete(@Param('id', IdValidationPipe) id: string) {
@@ -77,5 +70,19 @@ export class TopPageController {
       throw new NotFoundException(TOP_PAGE_NOT_FOUND);
     }
     return updatedTopPage;
+  }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Post('find')
+  async find(@Body() dto: FindTopPageDto) {
+    return this.topPageService.findByTopLevelCategory(dto.firstCategory);
+  }
+
+  @UsePipes(new ValidationPipe())
+  @HttpCode(200)
+  @Get('textSearch/:text')
+  async textSearch(@Param('text') text: string) {
+    return this.topPageService.findByText(text);
   }
 }
