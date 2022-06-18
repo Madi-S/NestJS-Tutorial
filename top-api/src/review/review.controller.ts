@@ -23,6 +23,7 @@ import { ReviewService } from './review.service';
 export class ReviewController {
   constructor(private readonly reviewService: ReviewService) {}
 
+  @UseGuards(JwtAuthGuard)
   @UsePipes(new ValidationPipe())
   @Post('create')
   async create(@Body() dto: CreateReviewDto) {
@@ -31,7 +32,10 @@ export class ReviewController {
 
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
-  async delete(@Param('id', IdValidationPipe) id: string, @UserEmail() email: string) {
+  async delete(
+    @Param('id', IdValidationPipe) id: string,
+    @UserEmail() email: string,
+  ) {
     // Debug
     console.log('!!!', email);
 

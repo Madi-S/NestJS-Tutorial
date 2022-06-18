@@ -5,16 +5,11 @@ import {
   IsOptional,
   IsArray,
   ValidateNested,
+  IsEnum,
 } from 'class-validator';
+import { TopLevelCategory } from '../top-page.model';
 
-export enum TopLevelCategory {
-  Courses,
-  Services,
-  Books,
-  Products,
-}
-
-export class HhData {
+export class HhDataDto {
   @IsNumber()
   count: number;
 
@@ -28,7 +23,7 @@ export class HhData {
   seniorSalary: number;
 }
 
-export class TopPageAdvantage {
+export class TopPageAdvantageDto {
   @IsString()
   title: string;
 
@@ -37,7 +32,7 @@ export class TopPageAdvantage {
 }
 
 export class CreateTopPageDto {
-  @IsString()
+  @IsEnum(TopLevelCategory)
   firstCategory: TopLevelCategory;
 
   @IsString()
@@ -54,13 +49,13 @@ export class CreateTopPageDto {
 
   @IsOptional()
   @ValidateNested()
-  @Type(() => HhData)
-  hh?: HhData;
+  @Type(() => HhDataDto)
+  hh?: HhDataDto;
 
   @IsArray()
   @ValidateNested()
-  @Type(() => TopPageAdvantage)
-  advantages: TopPageAdvantage[];
+  @Type(() => TopPageAdvantageDto)
+  advantages: TopPageAdvantageDto[];
 
   @IsString()
   seoText: string;
