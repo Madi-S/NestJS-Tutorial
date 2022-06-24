@@ -7,7 +7,7 @@ import { TELEGRAM_MODULE_OPTIONS } from './telegram.constants';
 @Module({})
 export class TelegramModule {
   static forRootAsync(options: ITelegramModuleAsyncOptions): DynamicModule {
-    const asyncOptions = this.createAsyncOptionsProvider(options);
+    const asyncOptions = TelegramModule.createAsyncOptionsProvider(options);
     return {
       module: TelegramModule,
       imports: options.imports,
@@ -21,6 +21,7 @@ export class TelegramModule {
   ): Provider {
     return {
       provide: TELEGRAM_MODULE_OPTIONS,
+      // tslint:disable-next-line: no-any
       useFactory: async (...args: any[]) => {
         const config = await options.useFactory(...args);
         return config;
